@@ -1,7 +1,7 @@
 {
   "name": "blear.core.querystring",
   "version": "1.0.0",
-  "description": "DOM 布局计算",
+  "description": "location querystring",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
     "test": "node ./node_modules/.bin/karma start karma.conf.js --single-run"
@@ -16,7 +16,7 @@
   "keywords": [
     "blear",
     "core",
-    "layout",
+    "querystring",
     "cloudcome",
     "ydr.me"
   ],
