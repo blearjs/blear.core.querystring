@@ -10,6 +10,7 @@
 
 var TRAVIS = process.env.TRAVIS;
 var COVERAGE = !TRAVIS;
+var SINGLE_RUN = process.argv.indexOf('--single-run') > -1;
 
 
 // http 服务器
@@ -22,6 +23,9 @@ module.exports = function (config) {
     var preprocessors = {};
     var reporters = ['progress'];
     var browsers = [];
+    var coverageReporters = [{
+        type: 'text-summary'
+    }];
 
     if (COVERAGE) {
         preprocessors = {
@@ -35,6 +39,13 @@ module.exports = function (config) {
         browsers = ['Chrome_travis_ci'];
     } else {
         browsers = ['Chrome'];
+    }
+
+    if (!SINGLE_RUN) {
+        coverageReporters.push({
+            type: 'lcov',
+            dir: './coverage/'
+        });
     }
 
     config.set({
@@ -95,15 +106,7 @@ module.exports = function (config) {
         // optionally, configure the reporter
         // 覆盖率报告
         coverageReporter: {
-            reporters: [
-                {
-                    type: 'lcov',
-                    dir: './coverage/'
-                },
-                {
-                    type: 'text-summary'
-                }
-            ]
+            reporters: coverageReporters
         },
 
 
