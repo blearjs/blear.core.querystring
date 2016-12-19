@@ -1,6 +1,6 @@
 {
   "name": "blear.core.querystring",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "location querystring",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
@@ -35,10 +35,10 @@
   "bugs": {
     "url": "https://github.com/blearjs/blear.core.querystring/issues"
   },
-  "dependencies": {},
-  "peerDependencies": {
+  "dependencies": {
     "blear.utils.querystring": "1.x"
   },
+  "peerDependencies": {},
   "devDependencies": {
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
